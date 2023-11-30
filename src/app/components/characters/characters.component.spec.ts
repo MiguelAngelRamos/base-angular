@@ -23,6 +23,44 @@ describe('CharactersComponent', () => {
   });
 
   it('debe mostrar tarjetas para cada personaje', () => {
+    //* Es que vamos a crear un arreglo con data simulada
+    component.characters = [
+      // Primer personaje simulado con propiedades completas según la interfaz ICharacter.
+      {
+        id: 1,
+        name: 'Rick',
+        status: Status.Alive,
+        species: Species.Human,
+        type: '',
+        gender: Gender.Male,
+        origin: { name: 'Earth', url: '' },
+        location: { name: 'Earth', url: '' },
+        image: '',
+        episode: [],
+        url: '',
+        created: ''
+      },
+      // Segundo personaje simulado.
+      {
+        id: 2,
+        name: 'Morty',
+        status: Status.Alive,
+        species: Species.Human,
+        type: '',
+        gender: Gender.Male,
+        origin: { name: 'Earth', url: '' },
+        location: { name: 'Earth', url: '' },
+        image: '',
+        episode: [],
+        url: '',
+        created: ''
+      }
+    ];
+    fixture.detectChanges(); // Detecamos los cambios y actualiza la vista
+    const cardElements = fixture.nativeElement.querySelectorAll('.card');
+
+    expect(cardElements.length).toBe(2); //* Verifica que hay dos tarjetas renderizadas
+
 
   });
 
