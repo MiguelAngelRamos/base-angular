@@ -9,7 +9,14 @@ describe('CharactersComponent', () => {
   let fixture: ComponentFixture<CharacterComponent>;
 
   //* Antes de cada prueba individual
-  beforeEach( () => {
+  beforeEach( async () => {
+
+    await TestBed.configureTestingModule({
+      declarations: [CharacterComponent],
+      imports: [HttpClientTestingModule]
+    })
+    .compileComponents();
+
     //* Creamos una instancia del componente en su entorno de prueba
     fixture = TestBed.createComponent(CharacterComponent);
     component = fixture.componentInstance;//* La instancia del componente

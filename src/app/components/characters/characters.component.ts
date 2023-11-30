@@ -13,7 +13,7 @@ export class CharacterComponent implements OnInit {
 
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this. rickAndMortyService.getCharacters().subscribe(response => {
       this.characters = response.results;
     })
