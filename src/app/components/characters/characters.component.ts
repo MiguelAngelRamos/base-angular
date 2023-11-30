@@ -11,7 +11,7 @@ export class CharacterComponent implements OnInit {
 
   characters: Character[] = [];
 
-  constructor(private rickAndMortyService: RickAndMortyService) {}
+  constructor(private readonly rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit() {
     this. rickAndMortyService.getCharacters().subscribe(response => {
