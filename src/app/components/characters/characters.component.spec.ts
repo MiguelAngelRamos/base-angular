@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 //* Importar las enumeraciones para usar en la simulacion de datos de pruebas.
 import { Gender, Species, Status } from '../../interfaces/IResponseApi';
 
+
 describe('CharactersComponent', () => {
   let component: CharacterComponent;
   let fixture: ComponentFixture<CharacterComponent>;
@@ -63,7 +64,7 @@ describe('CharactersComponent', () => {
         created: ''
       }
     ];
-    fixture.detectChanges(); // Detecamos los cambios y actualiza la vista
+    fixture.detectChanges(); // Detectamos los cambios y actualiza la vista
     const cardElements = fixture.nativeElement.querySelectorAll('.card');
 
     expect(cardElements.length).toBe(2); //* Verifica que hay dos tarjetas renderizadas
